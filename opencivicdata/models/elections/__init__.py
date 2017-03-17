@@ -14,7 +14,7 @@ from opencivicdata.models.base import (
     OCDIDField,
     OCDBase,
 )
-from opencivicdata.models.elections import CandidateContest
+from opencivicdata.models.elections.contests import CandidateContest
 from opencivicdata.models.people_orgs import (
     Organization,
     Post,
