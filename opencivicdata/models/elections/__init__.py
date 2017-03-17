@@ -8,7 +8,7 @@ import warnings
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from opencivicdata.models import Event, Division
-from opencivicdata.models.base import 
+from opencivicdata.models.base import (
     IdentifierBase,
     LinkBase,
     OCDIDField,
