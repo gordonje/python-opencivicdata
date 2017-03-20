@@ -14,9 +14,10 @@ from opencivicdata.models.base import (
     OCDIDField,
     OCDBase,
 )
-from opencivicdata.models.elections.contests import CandidateContest
+# from opencivicdata.models.elections.contests import CandidateContest
 from opencivicdata.models.people_orgs import (
     Organization,
+    Person,
     Post,
 )
 
@@ -85,7 +86,7 @@ class Candidacy(OCDBase):
                   'the candidate is competing.',
     )
     contest = models.ForeignKey(
-        CandidateContest,
+        'opencivicdata.CandidateContest',
         related_name='candidacies',
         help_text="Reference to an OCD CandidateContest representing the contest "
                   "in which the candidate is competing.",
@@ -103,7 +104,7 @@ class Candidacy(OCDBase):
                   "public office he/she currently holds",
     )
     party = models.ForeignKey(
-        Party,
+        'opencivicdata.Party',
         related_name='candidacies',
         null=True,
         help_text='Reference to and Party with which the candidate is affiliated.'
