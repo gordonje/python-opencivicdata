@@ -189,7 +189,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='election',
-            name='administrative_org',
+            name='administrative_organization',
             field=models.ForeignKey(help_text='Reference to the Organization that administers the election.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='elections', to='opencivicdata.Organization'),
         ),
         migrations.AddField(

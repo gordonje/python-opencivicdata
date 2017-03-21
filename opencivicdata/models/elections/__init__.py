@@ -32,7 +32,7 @@ class Election(Event):
         help_text="Reference to the Division that defines the broadest political "
                   "geography of any contest to be decided by the election.",
     )
-    administrative_org = models.ForeignKey(
+    administrative_organization = models.ForeignKey(
         Organization,
         related_name='elections',
         null=True,
