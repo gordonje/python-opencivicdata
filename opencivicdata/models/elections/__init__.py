@@ -4,7 +4,6 @@
 Election-related models.
 """
 from __future__ import unicode_literals
-import warnings
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from opencivicdata.models import Event, Division
@@ -118,6 +117,9 @@ class Candidacy(OCDBase):
                   "reference to candidacy at the top of the ticket."
     )
 
+    def __str__(self):
+        return '{0.candidate_name} for {0.contest}'.format(self)
+
     class Meta:
         """
         Model options.
@@ -125,13 +127,10 @@ class Candidacy(OCDBase):
         verbose_name_plural = "candidacies"
         ordering = ("contest", "post", "person",)
 
-    def __str__(self):
-        return self.ballot_name
-
     @property
     def election(self):
         """
-        Returns the election this candidacy is tied to.
+        Election in which the person is a candidate.
         """
         return self.contest.election
 
