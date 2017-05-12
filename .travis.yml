@@ -20,6 +20,6 @@ script:
     - ./run-tests.sh
 after_success:
     - coveralls
-notifications:
-    email:
-        - james@openstates.org
+# notifications:
+#     email:
+#         - james@openstates.org
