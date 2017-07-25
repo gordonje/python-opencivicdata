@@ -41,6 +41,7 @@ class CandidateContest(ContestBase):
     )
 
     class Meta:
+        ordering = ("election", "name",)
         db_table = 'opencivicdata_candidatecontest'
 
 
